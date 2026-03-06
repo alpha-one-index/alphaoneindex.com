@@ -40,4 +40,14 @@
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
+        <url>
+        <loc>https://alphaoneindex.com/about/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://alphaoneindex.com/media-kit/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
 </urlset>
