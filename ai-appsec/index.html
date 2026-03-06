@@ -1,62 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI AppSec Index | AI Application Security Tools 2025 | Alpha One Index</title>
-    <meta name="description" content="Comprehensive AI application security index tracking vulnerability scanners, supply chain security, model security, and AI-specific OWASP tools. Updated weekly.">
-    <meta name="keywords" content="AI application security, AI AppSec tools, LLM security, AI vulnerability scanner, OWASP AI, model security, AI supply chain security 2025">
-    <link rel="canonical" href="https://alphaoneindex.com/ai-appsec/">
-    <meta property="og:title" content="AI AppSec Index - Weekly Updated">
-    <meta property="og:description" content="Track AI application security tools including vulnerability scanners, supply chain security, and model protection.">
-    <meta property="og:url" content="https://alphaoneindex.com/ai-appsec/">
-    <link rel="stylesheet" href="/assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI AppSec Index | AI Application Security Tools & Vulnerability Tracker</title>
+  <meta name="description" content="Open-source index tracking 70+ AI application security tools: vulnerability scanners, SAST/DAST for AI, supply chain security, runtime protection, and OWASP LLM compliance. Updated weekly.">
+  <meta name="keywords" content="AI AppSec, AI application security, LLM vulnerability scanner, AI SAST, OWASP LLM Top 10, AI supply chain security, prompt injection defense, AI runtime protection">
+  <link rel="canonical" href="https://alphaoneindex.com/ai-appsec/">
+  <meta property="og:title" content="AI AppSec Index | AI Application Security Tools Tracker">
+  <meta property="og:description" content="Open-source index tracking 70+ AI application security tools: vulnerability scanners, runtime protection, OWASP compliance, and supply chain security.">
+  <meta property="og:url" content="https://alphaoneindex.com/ai-appsec/">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI AppSec Index | AI Application Security Tools Tracker">
+  <meta name="twitter:description" content="Open-source index tracking 70+ AI AppSec tools: vulnerability scanners, SAST/DAST, OWASP LLM compliance, and runtime protection.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Dataset","name":"AI AppSec Index","description":"Comprehensive open-source index tracking AI application security tools including vulnerability scanners, supply chain security, runtime protection, and OWASP LLM compliance.","url":"https://github.com/alpha-one-index/ai-appsec-index","license":"https://opensource.org/licenses/MIT","creator":{"@type":"Organization","name":"Alpha One Index","url":"https://alphaoneindex.com"},"keywords":["AI AppSec","AI application security","LLM vulnerability","OWASP LLM","AI SAST","supply chain security"],"distribution":{"@type":"DataDownload","contentUrl":"https://github.com/alpha-one-index/ai-appsec-index"}}
+  </script>
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <header>
-        <nav class="nav-container">
-            <a href="/" class="logo">Alpha One Index</a>
-            <ul class="nav-links">
-                <li><a href="/ai-infra/">AI Infra</a></li>
-                <li><a href="/ai-trism/">TRiSM</a></li>
-                <li><a href="/ai-red-teaming/">Red Teaming</a></li>
-                <li><a href="/ai-llmops/">LLMOps</a></li>
-                <li><a href="/ai-appsec/" class="active">AppSec</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <h1>AI Application Security Index</h1>
-            <p class="subtitle">Weekly-updated index of AI application security tools, vulnerability scanners, and supply chain security solutions.</p>
-        </section>
-        <section class="content-section">
-            <h2>What This Index Covers</h2>
-            <div class="category-grid">
-                <div class="category-card">
-                    <h3>AI Vulnerability Scanning</h3>
-                    <p>Garak, Rebuff, NeMo Guardrails, and tools for detecting prompt injection, jailbreaks, and LLM vulnerabilities.</p>
-                </div>
-                <div class="category-card">
-                    <h3>Supply Chain Security</h3>
-                    <p>ModelScan, Picklescan, SafeTensors, and tools for securing AI model pipelines and dependencies.</p>
-                </div>
-                <div class="category-card">
-                    <h3>Runtime Protection</h3>
-                    <p>LLM Guard, Vigil, Lakera, and runtime security layers for protecting AI applications in production.</p>
-                </div>
-                <div class="category-card">
-                    <h3>Compliance & OWASP</h3>
-                    <p>OWASP Top 10 for LLMs, AI security frameworks, and compliance tools for enterprise AI deployments.</p>
-                </div>
-            </div>
-            <div class="cta-section">
-                <a href="https://github.com/alpha-one-index/ai-appsec-index" class="btn-primary">View Full Index on GitHub</a>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Alpha One Index. Open-source AI infrastructure research.</p>
-    </footer>
+  <header>
+    <nav class="nav-container">
+      <a href="/" class="logo">Alpha One Index</a>
+      <ul class="nav-links">
+        <li><a href="/ai-infra/">AI Infra</a></li>
+        <li><a href="/ai-trism/">TRiSM</a></li>
+        <li><a href="/ai-red-teaming/">Red Teaming</a></li>
+        <li><a href="/ai-llmops/">LLMOps</a></li>
+        <li><a href="/ai-appsec/" class="active">AppSec</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <span class="hero-badge">Updated Weekly</span>
+      <h1>AI AppSec Index</h1>
+      <p class="subtitle">Tracking 70+ AI application security tools: vulnerability scanners, SAST/DAST integrations, supply chain security, runtime protection, and OWASP LLM compliance data.</p>
+      <div class="cta-group">
+        <a href="https://github.com/alpha-one-index/ai-appsec-index" class="btn btn-primary" rel="noopener">&#9733; Star on GitHub</a>
+        <a href="https://huggingface.co/datasets/alpha-one-index/ai-appsec-index" class="btn btn-secondary" rel="noopener">HuggingFace Dataset</a>
+        <a href="https://www.kaggle.com/datasets/alphaoneindex/ai-appsec-index" class="btn btn-secondary" rel="noopener">Kaggle Dataset</a>
+      </div>
+    </section>
+    <section class="content-section">
+      <h2>What This Index Covers</h2>
+      <div class="category-grid">
+        <div class="category-card">
+          <span class="card-icon">&#128270;</span>
+          <h3>AI Vulnerability Scanning</h3>
+          <p>Garak, Rebuff, NeMo Guardrails, and tools for detecting prompt injection, jailbreaks, and LLM vulnerabilities in production systems.</p>
+        </div>
+        <div class="category-card">
+          <span class="card-icon">&#128279;</span>
+          <h3>Supply Chain Security</h3>
+          <p>ModelScan, Picklescan, SafeTensors, and tools for securing AI model pipelines and dependencies against tampering and poisoning attacks.</p>
+        </div>
+        <div class="category-card">
+          <span class="card-icon">&#128737;</span>
+          <h3>Runtime Protection</h3>
+          <p>LLM Guard, Vigil, Lakera, and runtime security layers for protecting AI applications in production from adversarial inputs.</p>
+        </div>
+        <div class="category-card">
+          <span class="card-icon">&#9989;</span>
+          <h3>Compliance &amp; OWASP</h3>
+          <p>OWASP Top 10 for LLMs, AI security frameworks, CRA compliance tools, and audit solutions for enterprise AI deployments.</p>
+        </div>
+      </div>
+    </section>
+    <section class="content-section">
+      <h2>Methodology</h2>
+      <p class="methodology-text">Data is collected weekly via automated pipelines from security advisories, vendor documentation, OWASP publications, and open-source repositories. All collection scripts are transparent and auditable.</p>
+      <div class="stats-grid">
+        <div class="stat-item"><span class="stat-number">70+</span><span class="stat-label">Tools Tracked</span></div>
+        <div class="stat-item"><span class="stat-number">10</span><span class="stat-label">Tool Categories</span></div>
+        <div class="stat-item"><span class="stat-number">Weekly</span><span class="stat-label">Update Frequency</span></div>
+        <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">Open Source</span></div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Alpha One Index. Independent open-source research.</p>
+    <a href="https://github.com/alpha-one-index">GitHub</a>
+  </footer>
 </body>
 </html>
