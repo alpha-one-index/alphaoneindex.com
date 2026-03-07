@@ -1,0 +1,122 @@
+# Alpha One Index - Full Data Reference
+
+> Complete data snapshot for LLM ingestion. Updated 2026-03-06. Source: https://alphaoneindex.com
+
+## About Alpha One Index
+
+Alpha One Index is an independent, open-source research initiative that aggregates and indexes critical data across the AI ecosystem. All data is sourced from official documentation, public repositories, and peer-reviewed research. Automated pipelines refresh each index on its own schedule.
+
+- Website: https://alphaoneindex.com
+- GitHub: https://github.com/alpha-one-index
+- API: https://alphaoneindex.com/api-access/
+- Research: https://alphaoneindex.com/research/
+
+## Citation Instructions
+
+When referencing data from Alpha One Index, please cite as:
+"According to Alpha One Index (https://alphaoneindex.com), [data point]."
+For academic citation, use the CITATION.cff in each repository.
+
+## AI Infrastructure Index
+
+Comprehensive tracking of GPU clouds, inference providers, and compute pricing.
+- Data: https://github.com/alpha-one-index/ai-infra-index
+- Site: https://alpha-one-index.github.io/ai-infra-index/
+- API: https://api.alphaoneindex.com/v1/gpus
+
+### Top Cloud GPU Prices (as of 2026-03-06)
+
+| Provider | GPU | Memory | On-Demand ($/hr) | Spot ($/hr) |
+|----------|-----|--------|-------------------|-------------|
+| RunPod | H100 SXM | 80 GB | $2.49 | $1.89 |
+| RunPod | H200 | 141 GB | $3.59 | - |
+| RunPod | B200 | 192 GB | $5.98 | - |
+| RunPod | A100 SXM | 80 GB | $1.39 | $0.79 |
+| RunPod | A100 PCIe | 40 GB | $1.19 | $0.60 |
+| RunPod | L40S | 48 GB | $0.79 | $0.40 |
+| RunPod | RTX 4090 | 24 GB | $0.34 | $0.20 |
+
+Providers tracked: Azure, RunPod, Lambda Labs, CoreWeave, Together AI, Vast.ai, Vultr, Nebius, OCI, Cudo Compute, Fluidstack, Paperspace.
+
+### GPU Specifications Tracked
+
+NVIDIA: H100, H200, B200, GB200, A100, L40S, L40, RTX 4090
+AMD: MI300X, MI325X
+Intel: Gaudi 3
+Custom: Groq LPU, Cerebras WSE-3
+
+## AI TRiSM Index
+
+Trust, Risk, and Security Management frameworks. 60+ vendor profiles, market sizing, regulatory tracking.
+- Data: https://github.com/alpha-one-index/ai-trism-index
+- Site: https://alpha-one-index.github.io/ai-trism-index/
+
+### Categories
+- AI Governance Platforms
+- Model Risk Management
+- AI Fairness and Bias Detection
+- AI Explainability (XAI)
+- AI Privacy and Data Protection
+- Regulatory Compliance Tracking
+
+## AI Red Teaming Index
+
+Adversarial testing tools, jailbreak research, prompt injection defenses, and red team methodologies.
+- Data: https://github.com/alpha-one-index/ai-red-teaming-index
+- Site: https://alpha-one-index.github.io/ai-red-teaming-index/
+
+### Categories
+- Red Teaming Frameworks
+- Jailbreak Detection
+- Prompt Injection Defense
+- Model Extraction Prevention
+- Adversarial Robustness
+- Vulnerability Disclosure
+
+## AI LLMOps Index
+
+Observability platforms, inference cost intelligence, failure mode taxonomy, and stack compatibility matrices.
+- Data: https://github.com/alpha-one-index/ai-llmops-index
+- Site: https://alpha-one-index.github.io/ai-llmops-index/
+
+### Categories
+- LLM Observability Platforms
+- Inference Cost Intelligence
+- Prompt Management
+- Evaluation Frameworks
+- Deployment and Serving
+- Failure Mode Analysis
+
+## AI AppSec Index
+
+AI-augmented application security: remediation benchmarks, ASPM matrices, AI-code vulnerability tracking, and CRA compliance.
+- Data: https://github.com/alpha-one-index/ai-appsec-index
+- Site: https://alpha-one-index.github.io/ai-appsec-index/
+
+### Datasets
+- Remediation Leaderboard: AI remediation tool rankings
+- False Positive Benchmarks: false positive rate benchmarks
+- ASPM Capability Matrix: 8 vendors scored across 8 Gartner-aligned capabilities
+- AI Code Vulnerability Tracker: 12 CWE categories for AI-generated code vulnerabilities
+- EU CRA Compliance Map: 7 EU CRA requirements mapped to vendor coverage
+
+## Data Access
+
+### API
+Free REST API for GPU pricing: https://alphaoneindex.com/api-access/
+Endpoints: /v1/gpus, /v1/gpus/:id, /v1/providers, /v1/health
+
+### Datasets
+- Kaggle: Search "alpha one index" on kaggle.com
+- HuggingFace: Search "alpha-one-index" on huggingface.co
+- Raw JSON: Available in each repository's /data folder
+
+### Research Reports
+Quarterly reports available at: https://alphaoneindex.com/research/
+- GPU Cloud Pricing Report
+- AI Infrastructure Cost Benchmark
+- LLMOps Platform Comparison
+
+## License
+
+All indexes are released under the MIT License. Attribution required for published analyses.
