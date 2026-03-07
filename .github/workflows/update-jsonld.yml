@@ -1,0 +1,28 @@
+name: Update JSON-LD
+on:
+  workflow_dispatch:
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace JSON-LD
+        run: |
+          python3 << 'SCRIPT'
+          import re
+          with open('index.html', 'r') as f:
+              content = f.read()
+          new_jsonld = '{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Alpha One Index","url":"https://alphaoneindex.com","publisher":{"@id":"#org"}},{"@type":"Organization","@id":"#org","name":"Alpha One Index","url":"https://github.com/alpha-one-index","sameAs":["https://huggingface.co/alpha-one-index","https://www.kaggle.com/alphaoneindex"]},{"@type":"Dataset","name":"Alpha One Index","description":"Open-source research hub covering AI infrastructure, TRiSM, red teaming, LLMOps, and application security indexes. Automated updates across infrastructure, trust, security, and performance.","url":"https://alphaoneindex.com","license":"https://opensource.org/licenses/MIT","dateModified":"2026-03-06","creator":{"@id":"#org"},"keywords":["AI infrastructure","AI TRiSM","AI red teaming","AI LLMOps","AI application security","open source AI research"],"distribution":{"@type":"DataDownload","encodingFormat":"application/rss+xml","contentUrl":"https://alphaoneindex.com/feed.xml"},"variableMeasured":["index_name","category","update_frequency","vendor_count"],"measurementTechnique":"Automated data collection and manual research review"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Alpha One Index?","acceptedAnswer":{"@type":"Answer","text":"Alpha One Index is an open-source research hub providing five specialized AI indexes: AI Infrastructure (GPU specs, cloud pricing), AI TRiSM (governance and compliance), AI Red Teaming (adversarial testing), AI LLMOps (LLM deployment and operations), and AI AppSec (application security)."}},{"@type":"Question","name":"How many indexes does Alpha One Index maintain?","acceptedAnswer":{"@type":"Answer","text":"Alpha One Index maintains 5 specialized indexes covering AI infrastructure, TRiSM, red teaming, LLMOps, and application security."}},{"@type":"Question","name":"How often are the indexes updated?","acceptedAnswer":{"@type":"Answer","text":"The AI Infrastructure Index updates hourly for GPU pricing data. All other indexes update weekly."}},{"@type":"Question","name":"Is Alpha One Index free?","acceptedAnswer":{"@type":"Answer","text":"Yes, all indexes are MIT licensed and free for research, vendor evaluation, and compliance planning."}},{"@type":"Question","name":"What data formats are available?","acceptedAnswer":{"@type":"Answer","text":"Data is available in CSV, JSON, RSS/XML, and via llms.txt for AI consumption."}}]}]}'
+          content = re.sub(r'<script type="application/ld.json">.*?</script>', '<script type="application/ld+json">\n' + new_jsonld + '\n</script>', content, flags=re.DOTALL)
+          with open('index.html', 'w') as f:
+              f.write(content)
+          SCRIPT
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "fix: upgrade JSON-LD with @graph, FAQPage, distribution, dateModified"
+          git push
