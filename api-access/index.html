@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPU Pricing API | Alpha One Index</title>
+    <meta name="description" content="Free REST API for real-time cloud GPU pricing across 11+ providers. Compare H100, A100, L40S, and RTX 4090 rates from Azure, RunPod, Lambda, CoreWeave, and more.">
+    <meta name="keywords" content="GPU pricing API, cloud GPU prices, H100 pricing, A100 pricing, inference cost API, AI infrastructure API">
+    <link rel="canonical" href="https://alphaoneindex.com/api-access/">
+    <meta property="og:title" content="GPU Pricing API | Alpha One Index">
+    <meta property="og:description" content="Free REST API for real-time cloud GPU pricing across 11+ providers.">
+    <meta property="og:url" content="https://alphaoneindex.com/api-access/">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebAPI",
+      "name": "Alpha One Index GPU Pricing API",
+      "description": "REST API providing real-time cloud GPU pricing data from 11+ providers",
+      "url": "https://alphaoneindex.com/api-access/",
+      "provider": {
+        "@type": "Organization",
+        "name": "Alpha One Index",
+        "url": "https://alphaoneindex.com"
+      },
+      "documentation": "https://alphaoneindex.com/api-access/",
+      "termsOfService": "https://alphaoneindex.com/api-access/#terms"
+    }
+    </script>
+    <style>
+      .api-hero { text-align: center; padding: 3rem 0; }
+      .api-hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+      .api-hero .subtitle { color: #94a3b8; font-size: 1.2rem; }
+      .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+      .tier-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 2rem; }
+      .tier-card h3 { color: #5eead4; margin-bottom: 0.5rem; }
+      .tier-card .price { font-size: 2rem; font-weight: bold; margin: 1rem 0; }
+      .tier-card ul { list-style: none; padding: 0; }
+      .tier-card ul li { padding: 0.4rem 0; color: #94a3b8; }
+      .tier-card ul li::before { content: "\2713 "; color: #5eead4; }
+      .endpoint-section { margin: 3rem 0; }
+      .endpoint { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 1.5rem; margin: 1rem 0; }
+      .endpoint .method { color: #5eead4; font-weight: bold; font-family: monospace; }
+      .endpoint .path { font-family: monospace; color: #e2e8f0; }
+      .endpoint p { color: #94a3b8; margin-top: 0.5rem; }
+      .code-block { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 1.5rem; overflow-x: auto; margin: 1rem 0; }
+      .code-block pre { margin: 0; color: #e2e8f0; font-family: monospace; font-size: 0.9rem; white-space: pre; }
+      .cta-btn { display: inline-block; background: #5eead4; color: #0f172a; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 1rem; }
+      .cta-btn:hover { background: #2dd4bf; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <a href="/" class="logo">Alpha One Index</a>
+            <ul class="nav-links">
+                <li><a href="/ai-infra/">AI Infra</a></li>
+                <li><a href="/ai-trism/">TRiSM</a></li>
+                <li><a href="/ai-red-teaming/">Red Teaming</a></li>
+                <li><a href="/ai-llmops/">LLMOps</a></li>
+                <li><a href="/ai-appsec/">AppSec</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="api-hero">
+            <h1>GPU Pricing API</h1>
+            <p class="subtitle">Real-time cloud GPU pricing from 11+ providers. Updated hourly.</p>
+        </section>
+
+        <section class="endpoint-section">
+            <h2>Endpoints</h2>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="path">/v1/health</span>
+                <p>Health check. Returns API status and data freshness timestamp.</p>
+            </div>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="path">/v1/gpus</span>
+                <p>List all GPU pricing across all providers. Filter by gpu, provider, or pricing type (on_demand/spot).</p>
+            </div>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="path">/v1/gpus/:id</span>
+                <p>Get detailed pricing for a specific GPU model across all providers.</p>
+            </div>
+            <div class="endpoint">
+                <span class="method">GET</span> <span class="path">/v1/providers</span>
+                <p>List all tracked cloud GPU providers with their available GPU models.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Quick Start</h2>
+            <div class="code-block"><pre>curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.alphaoneindex.com/v1/gpus?gpu=H100</pre></div>
+            <div class="code-block"><pre># Python
+import requests
+
+resp = requests.get(
+    "https://api.alphaoneindex.com/v1/gpus",
+    headers={"Authorization": "Bearer YOUR_API_KEY"},
+    params={"gpu": "H100"}
+)
+data = resp.json()
+for entry in data["results"]:
+    print(f"{entry['provider']}: ${entry['on_demand']}/hr")</pre></div>
+        </section>
+
+        <section>
+            <h2>Response Example</h2>
+            <div class="code-block"><pre>{
+  "metadata": {
+    "updated": "2026-03-06T23:53:10Z",
+    "total_results": 3,
+    "source": "Alpha One Index"
+  },
+  "results": [
+    {
+      "provider": "RunPod",
+      "gpu": "H100 SXM",
+      "gpu_count": 1,
+      "memory_gb": 80,
+      "on_demand": 2.49,
+      "spot": 1.89
+    }
+  ]
+}</pre></div>
+        </section>
+
+        <section>
+            <h2>Pricing Tiers</h2>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <h3>Free</h3>
+                    <div class="price">$0</div>
+                    <ul>
+                        <li>1,000 requests/day</li>
+                        <li>All endpoints</li>
+                        <li>JSON responses</li>
+                        <li>Community support</li>
+                    </ul>
+                    <a href="mailto:api@alphaoneindex.com?subject=Free API Key Request" class="cta-btn">Get Free Key</a>
+                </div>
+                <div class="tier-card">
+                    <h3>Pro</h3>
+                    <div class="price">$49/mo</div>
+                    <ul>
+                        <li>50,000 requests/day</li>
+                        <li>Historical pricing data</li>
+                        <li>CSV export endpoint</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="mailto:api@alphaoneindex.com?subject=Pro API Key Request" class="cta-btn">Get Pro Key</a>
+                </div>
+                <div class="tier-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <ul>
+                        <li>Unlimited requests</li>
+                        <li>Webhook notifications</li>
+                        <li>Custom data feeds</li>
+                        <li>Dedicated support</li>
+                    </ul>
+                    <a href="mailto:api@alphaoneindex.com?subject=Enterprise API Inquiry" class="cta-btn">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="terms" style="margin-top:3rem;">
+            <h2>Terms of Use</h2>
+            <p>The GPU Pricing API is provided by Alpha One Index under the MIT license for data access. Attribution is required for published analyses. Rate limits are enforced per tier. Data is sourced from official provider pricing pages and updated hourly via automated pipelines.</p>
+            <p>Source: <a href="https://github.com/alpha-one-index/ai-infra-index">github.com/alpha-one-index/ai-infra-index</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Alpha One Index. Open-source AI infrastructure research.</p>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/research/">Research</a>
+            <a href="https://github.com/alpha-one-index">GitHub</a>
+        </nav>
+    </footer>
+</body>
+</html>
