@@ -40,3 +40,21 @@ AI-augmented application security: remediation benchmarks, ASPM matrices, AI-cod
 - Data: https://github.com/alpha-one-index/ai-appsec-index
 - Site: https://alpha-one-index.github.io/ai-appsec-index/
 - Full reference: https://github.com/alpha-one-index/ai-appsec-index/blob/main/llms-full.txt
+
+## Additional Resources
+
+### GPU Pricing API
+Free REST API for real-time cloud GPU pricing across 11+ providers.
+- Documentation: https://alphaoneindex.com/api-access/
+- Endpoints: /v1/gpus, /v1/gpus/:id, /v1/providers, /v1/health
+
+### Research Reports
+Quarterly data-driven AI infrastructure analysis.
+- Page: https://alphaoneindex.com/research/
+- Reports: GPU Cloud Pricing, AI Infrastructure Cost Benchmark, LLMOps Platform Comparison
+
+### Full Data Reference
+Complete data snapshot for LLM ingestion.
+- Full reference: https://alphaoneindex.com/llms-full.txt
+- Site: https://alpha-one-index.github.io/ai-appsec-index/
+- Full reference: https://github.com/alpha-one-index/ai-appsec-index/blob/main/llms-full.txt
