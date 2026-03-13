@@ -23,7 +23,7 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://alphaoneindex.com/"},
-        {"@type": "ListItem", "position": 2, "name": "{{INDEX_NAME}}", "item": "https://alphaoneindex.com/{{INDEX_SLUG}}/"},
+        {"@type": "ListItem", "position": 2, "name": "AI Infrastructure Index", "item": "https://alphaoneindex.com/ai-infra/"},
         {"@type": "ListItem", "position": 3, "name": "cloud GPU pricing comparison"}
       ]
     },
@@ -39,9 +39,9 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "{{FAQ_Q1}}", "acceptedAnswer": {"@type": "Answer", "text": "{{FAQ_A1}}"}},
-        {"@type": "Question", "name": "{{FAQ_Q2}}", "acceptedAnswer": {"@type": "Answer", "text": "{{FAQ_A2}}"}},
-        {"@type": "Question", "name": "{{FAQ_Q3}}", "acceptedAnswer": {"@type": "Answer", "text": "{{FAQ_A3}}"}}
+        {"@type": "Question", "name": "What data does the cloud GPU pricing comparison page track?", "acceptedAnswer": {"@type": "Answer", "text": "This page tracks live pricing, specifications, and benchmark data related to cloud gpu pricing comparison, sourced from public APIs and official documentation."}},
+        {"@type": "Question", "name": "How often is cloud gpu pricing comparison data updated?", "acceptedAnswer": {"@type": "Answer", "text": "Data is refreshed automatically via our pipeline. Pricing data updates hourly, while specifications and benchmarks update daily."}},
+        {"@type": "Question", "name": "Can I access cloud gpu pricing comparison data via API?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All data is available through our free REST API and as downloadable JSON/CSV datasets on GitHub, HuggingFace, and Kaggle."}}
       ]
     }
   ]
@@ -63,16 +63,16 @@
 </header>
 <nav class="breadcrumbs">
   <div class="container">
-    <a href="/">Home</a> / <a href="/{{INDEX_SLUG}}/">{{INDEX_NAME}}</a> / <span>cloud GPU pricing comparison</span>
+    <a href="/">Home</a> / <a href="/ai-infra/">AI Infrastructure Index</a> / <span>cloud GPU pricing comparison</span>
   </div>
 </nav>
 <main>
   <div class="container">
     <section class="hero">
       <h1>cloud GPU pricing comparison</h1>
-      <p>{{HERO_DESCRIPTION}}</p>
+      <p>Comprehensive data and analysis for cloud gpu pricing. Updated regularly from public sources, official documentation, and peer-reviewed research.</p>
       <div class="cta-row">
-        <a href="{{GITHUB_REPO_URL}}" class="cta-btn primary">View on GitHub</a>
+        <a href="https://github.com/alpha-one-index/ai-infra-index" class="cta-btn primary">View on GitHub</a>
         <a href="/api-access/" class="cta-btn secondary">API Access</a>
       </div>
     </section>
@@ -80,23 +80,26 @@
       <!-- Stats cards populated by template vars -->
     </section>
     <section class="data-table-wrap">
-      <h2>{{TABLE_TITLE}}</h2>
+      <h2>cloud GPU pricing comparison Overview</h2>
       <table>
-        <thead><tr>{{TABLE_HEADERS}}</tr></thead>
-        <tbody>{{TABLE_ROWS}}</tbody>
+        <thead><tr><th>Name</th><th>Details</th><th>Last Updated</th></tr></thead>
+        <tbody><tr><td colspan="3">Data loading... Visit our <a href="https://github.com/alpha-one-index">GitHub</a> for the full dataset.</td></tr></tbody>
       </table>
     </section>
     <section class="related-grid">
       <h3>Related Resources</h3>
-      {{RELATED_LINKS}}
+      <a href="/ai-infra/gpu-specifications/" class="related-card">GPU specifications comparison</a>
+<a href="/ai-infra/ai-accelerators/" class="related-card">AI accelerators comparison</a>
+<a href="/ai-infra/inference-benchmarks/" class="related-card">AI inference benchmarks</a>
+<a href="/ai-infra/training-costs/" class="related-card">AI model training cost</a>
     </section>
     <section class="cta-banner">
       <h2>Get the Full Dataset</h2>
       <p>Download structured JSON data or access via API.</p>
       <div class="cta-row">
-        <a href="{{GITHUB_REPO_URL}}" class="cta-btn primary">Star on GitHub</a>
-        <a href="{{HUGGINGFACE_URL}}" class="cta-btn secondary">HuggingFace</a>
-        <a href="{{KAGGLE_URL}}" class="cta-btn secondary">Kaggle</a>
+        <a href="https://github.com/alpha-one-index/ai-infra-index" class="cta-btn primary">Star on GitHub</a>
+        <a href="https://huggingface.co/datasets/alpha-one-index/ai-infra-index" class="cta-btn secondary">HuggingFace</a>
+        <a href="https://www.kaggle.com/datasets/alphaoneindex/ai-infra-index" class="cta-btn secondary">Kaggle</a>
       </div>
     </section>
   </div>
